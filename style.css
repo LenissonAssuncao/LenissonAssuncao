@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+body {
+    height: 100vh;
+    background: url("FUNDO\ 2.jpg") no-repeat center / cover;
+    padding: 50px 5%;
+}
+.container{
+    position: relative;
+    height: 90%;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 30px;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:  25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+h1{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration:  none;
+    font-weight: 500;
+    margin-left: 35px;
+    border-bottom: 2px solid transparent;
+    transition: .5s;
+}
+nav ul{
+    display: flex;
+}
+.nomeCurriculo{
+    padding-top: 20vh;
+    padding-left: 20vh;
+    color: rgb(255, 255, 255);
+}
+p{
+    margin-left: 20vh;
+    margin-top: 10vh;
+    color: rgb(128, 78, 155);
+}
+.btn{
+    
+    padding: 10px;
+    margin-top:20vh;
+    margin-left: 25vh;
+    color: rgb(81, 23, 110);
+    background: #d0c8d6;
+}
