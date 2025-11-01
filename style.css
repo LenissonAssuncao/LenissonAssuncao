@@ -45,8 +45,10 @@ nav a{
 }
 nav ul{
     display: flex;
+    list-style: none;
 }
 .nomeCurriculo{
+    font-size: 35px;
     padding-top: 20vh;
     padding-left: 20vh;
     color: rgb(255, 255, 255);
