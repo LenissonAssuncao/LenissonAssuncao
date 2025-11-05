@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="todolist">
+  <h1 class="tituloTodolist">TO-DO-LIST</h1>
+  
+  <input 
+    type="text" 
+    id="inputTodolist" 
+    class="inputTodolist" 
+    placeholder="Digite sua tarefa">
+  
+  <button id="btnTodolist" class="btn-Todolist">OK ></button>
+  
+  <ul id="lista"></ul>
+</div>
+
+
+    <script>
+  const inputTodolist = document.getElementById('inputTodolist');
+  const botao = document.getElementById('btnTodolist');
+  const lista = document.getElementById('lista');
+
+  function adicionarTarefa() {
+    const texto = inputTodolist.value.trim();
+
+    if (texto === "") {
+      alert("Digite uma tarefa!");
+      return;
+    }
+
+    const li = document.createElement("li");
+    li.textContent = texto;
+
+    const botaoRemover = document.createElement("button");
+    botaoRemover.textContent = "Remover";
+    botaoRemover.onclick = function() {
+      li.remove();
+    };
+
+    li.appendChild(botaoRemover);
+    lista.appendChild(li);
+
+    inputTodolist.value = ""; 
+    inputTodolist.focus();
+  }
+
+  
+  botao.addEventListener("click", adicionarTarefa);
+  inputTodolist.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") adicionarTarefa();
+  });
+</script>
+
+
+</body>
+</html>
