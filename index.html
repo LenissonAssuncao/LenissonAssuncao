@@ -12,19 +12,77 @@
             <H1>MEU PORTFOLIO</H1>
             
                 <nav>
-                <ul>
-                    <a href="#" onclick="mostrarSecao('inicio')"><li>INÍCIO</li></a>
-                    <a href="#"><li>SOBRE</li></a>
-                    <!-- Abrirá em uma nova aba -->
-                    <a href="PROJETOS.html" target="_blank"><li>PROJETOS</li></a>
-                    <a href="contatos.html" target="_blank"><li>CONTATOS</li></a>
-                </ul>
-            </nav>
+                    <ul>
+                        <li><a href="#" data-secao="inicio">INÍCIO</a></li>
+                        <li><a href="#" data-secao="sobre">SOBRE</a></li>
+                        <li><a href="#" data-secao="projetos">PROJETOS</a></li>
+                        <li><a href="#" data-secao="contados">CONTATOS</a></li>
+                    </ul>
+                </nav>
                 
     </header>
-    <h2 class="nomeCurriculo"><strong>LÊNISSON ASSUNÇÃO</strong></h2>
-    <p class="descricao_pagina">Desenvolvendo em JavaScript<br> usando outras ferramentas; HTML, CSS. <br>Atualmente cursando BOOTCAMP <br>através do programa Santander 2025 - Ciência de Dados com Python</p>
-   <a href="curriculo.docx" download><button class="btn">Download currículo</button></a>
+    <main id="conteudo">
+        <section id="inicio" class="secao ativa">
+            <h2>LÊNISSON ASSUNÇÃO</h2>
+            <p>Desenvolvendo em JavaScript<br>usando HTML, CSS.<br>Bootcamp Santander 2025 - Ciência de Dados com Python</p>
+            <a href="curriculo.docx" download><button class="btn">Download   currículo</button></a>
+        </section>
+                <section id="sobre" class="secao">
+            <h2>SOBRE MIM</h2>
+            <p>Aqui você conta quem é, suas experiências e habilidades.</p>
+        </section>
+        
+        <section id="projetos" class="secao">
+            <h2>MEUS PROJETOS</h2>
+            <p>Lista seus projetos aqui com links para GitHub.</p>
+        </section>
+        
+        <section id="contatos" class="secao">
+            <h2>CONTATO</h2>
+            <p>Seu email, WhatsApp, LinkedIn aqui.</p>
+        </section>
+    </main>
+</div>
+
+<style>
+    .secao { display: none; }
+    .secao.ativa { display: block; }
+    nav ul { 
+        list-style: none; 
+        display: flex; 
+        gap: 20px; 
+        padding: 0;
+    }
+    nav a { 
+        text-decoration: none; 
+        color: white; 
+        padding: 10px;
+    }
+</style>
+<script>
+function mostrarSecao(id) {
+    // Esconde todas as seções
+    document.querySelectorAll('.secao').forEach(secao => {
+        secao.classList.remove('ativa');
+    });
+    // Mostra só a escolhida
+    document.getElementById(id).classList.add('ativa');
+}
+
+// Quando página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    // Pega todos os links do menu
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // IMPEDIR nova aba!
+            const secao = this.dataset.secao;
+            mostrarSecao(secao);//
+        });
+    });
+});
+</script>
+ 
+    </main>
 </div>
 
 </body>
