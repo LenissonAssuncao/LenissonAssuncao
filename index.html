@@ -13,10 +13,10 @@
             
                 <nav>
                     <ul>
-                        <li><a href="#" data-secao="inicio">INÍCIO</a></li>
-                        <li><a href="#" data-secao="sobre">SOBRE</a></li>
-                        <li><a href="#" data-secao="projetos">PROJETOS</a></li>
-                        <li><a href="#" data-secao="contados">CONTATOS</a></li>
+                        <li><a href="index.html">INÍCIO</a></li>
+                        <li><a href="SOBRE.HTML">SOBRE</a></li>
+                        <li><a href="PROJETOS.html">PROJETOS</a></li>
+                        <li><a href="contatos.html">CONTATOS</a></li>
                     </ul>
                 </nav>
                 
@@ -27,61 +27,7 @@
             <p>Desenvolvendo em JavaScript<br>usando HTML, CSS.<br>Bootcamp Santander 2025 - Ciência de Dados com Python</p>
             <a href="curriculo.docx" download><button class="btn">Download   currículo</button></a>
         </section>
-                <section id="sobre" class="secao">
-            <h2>SOBRE MIM</h2>
-            <p>Aqui você conta quem é, suas experiências e habilidades.</p>
-        </section>
-        
-        <section id="projetos" class="secao">
-            <h2>MEUS PROJETOS</h2>
-            <p>Lista seus projetos aqui com links para GitHub.</p>
-        </section>
-        
-        <section id="contatos" class="secao">
-            <h2>CONTATO</h2>
-            <p>Seu email, WhatsApp, LinkedIn aqui.</p>
-        </section>
-    </main>
-</div>
 
-<style>
-    .secao { display: none; }
-    .secao.ativa { display: block; }
-    nav ul { 
-        list-style: none; 
-        display: flex; 
-        gap: 20px; 
-        padding: 0;
-    }
-    nav a { 
-        text-decoration: none; 
-        color: white; 
-        padding: 10px;
-    }
-</style>
-<script>
-function mostrarSecao(id) {
-    // Esconde todas as seções
-    document.querySelectorAll('.secao').forEach(secao => {
-        secao.classList.remove('ativa');
-    });
-    // Mostra só a escolhida
-    document.getElementById(id).classList.add('ativa');
-}
-
-// Quando página carregar
-document.addEventListener('DOMContentLoaded', function() {
-    // Pega todos os links do menu
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // IMPEDIR nova aba!
-            const secao = this.dataset.secao;
-            mostrarSecao(secao);//
-        });
-    });
-});
-</script>
- 
     </main>
 </div>
 
