@@ -2,34 +2,29 @@
 <html lang="pt_BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTIFÓLIO</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Disparo de click</title>
+    <style>
+        
+        #info { display: inline; margin-left: 10px; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <H1>MEU PORTFOLIO</H1>
-            
-                <nav>
-                    <ul>
-                        <li><a href="index.html">INÍCIO</a></li>
-                        <li><a href="SOBRE.HTML">SOBRE</a></li>
-                        <li><a href="PROJETOS.html">PROJETOS</a></li>
-                        <li><a href="contatos.html">CONTATOS</a></li>
-                    </ul>
-                </nav>
-                
-    </header>
-    <main id="conteudo">
-        <section id="inicio" class="secao ativa">
-            <h2>LÊNISSON ASSUNÇÃO</h2>
-            <p>Desenvolvendo em JavaScript<br>usando HTML, CSS.<br>Bootcamp Santander 2025 - Ciência de Dados com Python</p>
-            <a href="curriculo.docx" download><button class="btn">Download   currículo</button></a>
-        </section>
+    <input type="checkbox" id="meuCheckBox">
+    <label for="meuCheckBox">ON / OFF</label>
+    <p id="info">DESLIGADO</p> 
 
-    </main>
-</div>
+    <script>
+      const checkBox = document.getElementById('meuCheckBox');
+      const elementoInfo = document.getElementById('info');
 
+      checkBox.addEventListener('change', function(){
+        
+        if (this.checked) {
+            elementoInfo.textContent = 'LIGADO!';
+        } else {
+            elementoInfo.textContent = 'DESLIGADO';
+        }
+      });
+    </script>
 </body>
 </html>
